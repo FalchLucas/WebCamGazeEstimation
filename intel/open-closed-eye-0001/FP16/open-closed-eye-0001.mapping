@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<mapping>
+	<map>
+		<framework name="input.1" output_port_id="input.1" />
+		<IR name="input.1" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="8" output_port_id="8" />
+		<IR name="8" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="9" output_port_id="9" />
+		<IR name="9" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="10" output_port_id="10" />
+		<IR name="10" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="conv2.weight" output_port_id="conv2.weight" />
+		<IR name="conv2.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="11" output_port_id="11" />
+		<IR name="11" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="12" output_port_id="12" />
+		<IR name="12" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="13" output_port_id="13" />
+		<IR name="13" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="conv3.weight" output_port_id="conv3.weight" />
+		<IR name="conv3.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="14" output_port_id="14" />
+		<IR name="14" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="conv4.weight" output_port_id="conv4.weight" />
+		<IR name="conv4.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="15" output_port_id="15" />
+		<IR name="15" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="16" output_port_id="16" />
+		<IR name="16" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="17" output_port_id="17" />
+		<IR name="17" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="18" output_port_id="18" />
+		<IR name="18" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="19" output_port_id="19" />
+		<IR name="19" output_port_id="2" />
+	</map>
+</mapping>

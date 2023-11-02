@@ -1,0 +1,656 @@
+<?xml version="1.0" ?>
+<net name="torch-jit-export" version="11">
+	<layers>
+		<layer id="0" name="input.1" type="Parameter" version="opset1">
+			<data shape="1,3,32,32" element_type="f32"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="input.1"/>
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="input.1">
+					<dim>1</dim>
+					<dim>3</dim>
+					<dim>32</dim>
+					<dim>32</dim>
+					<rt_info>
+						<attribute name="layout" version="0" layout="[N,C,H,W]"/>
+					</rt_info>
+				</port>
+			</output>
+		</layer>
+		<layer id="1" name="Constant_165" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 3, 1, 1" offset="0" size="12"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Constant_165"/>
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>3</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="2" name="Subtract_166" type="Subtract" version="opset1">
+			<data auto_broadcast="numpy"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Subtract_166"/>
+				<attribute name="preprocessing" version="0"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>3</dim>
+					<dim>32</dim>
+					<dim>32</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>3</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>3</dim>
+					<dim>32</dim>
+					<dim>32</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="3" name="Constant_1129" type="Const" version="opset1">
+			<data element_type="f32" shape="10, 3, 3, 3" offset="12" size="1080"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="8/WithoutBiases, Constant_167, Divide_168, conv1.weight"/>
+				<attribute name="preprocessing" version="0"/>
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32">
+					<dim>10</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="4" name="8/WithoutBiases" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="8/WithoutBiases, Constant_167, Divide_168, conv1.weight"/>
+				<attribute name="preprocessing" version="0"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>3</dim>
+					<dim>32</dim>
+					<dim>32</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>10</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>10</dim>
+					<dim>30</dim>
+					<dim>30</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="5" name="Reshape_28" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 10, 1, 1" offset="1092" size="40"/>
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>10</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="6" name="8" type="Add" version="opset1">
+			<data auto_broadcast="numpy"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="8, Concat_27, Reshape_28"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>10</dim>
+					<dim>30</dim>
+					<dim>30</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>10</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="8">
+					<dim>1</dim>
+					<dim>10</dim>
+					<dim>30</dim>
+					<dim>30</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="7" name="9" type="MaxPool" version="opset8">
+			<data strides="2, 2" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" kernel="2, 2" rounding_type="floor" auto_pad="explicit" index_element_type="i64" axis="0"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="9"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>10</dim>
+					<dim>30</dim>
+					<dim>30</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="9">
+					<dim>1</dim>
+					<dim>10</dim>
+					<dim>15</dim>
+					<dim>15</dim>
+				</port>
+				<port id="2" precision="I64">
+					<dim>1</dim>
+					<dim>10</dim>
+					<dim>15</dim>
+					<dim>15</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="8" name="10" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="10"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>10</dim>
+					<dim>15</dim>
+					<dim>15</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="10">
+					<dim>1</dim>
+					<dim>10</dim>
+					<dim>15</dim>
+					<dim>15</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="9" name="conv2.weight" type="Const" version="opset1">
+			<data element_type="f32" shape="20, 10, 3, 3" offset="1132" size="7200"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="conv2.weight"/>
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="conv2.weight">
+					<dim>20</dim>
+					<dim>10</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="10" name="11/WithoutBiases" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="11/WithoutBiases"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>10</dim>
+					<dim>15</dim>
+					<dim>15</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>20</dim>
+					<dim>10</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>20</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="11" name="Reshape_78" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 20, 1, 1" offset="8332" size="80"/>
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>20</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="12" name="11" type="Add" version="opset1">
+			<data auto_broadcast="numpy"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="11, Concat_77, Reshape_78"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>20</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>20</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="11">
+					<dim>1</dim>
+					<dim>20</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="13" name="12" type="MaxPool" version="opset8">
+			<data strides="2, 2" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" kernel="2, 2" rounding_type="floor" auto_pad="explicit" index_element_type="i64" axis="0"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="12"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>20</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="12">
+					<dim>1</dim>
+					<dim>20</dim>
+					<dim>6</dim>
+					<dim>6</dim>
+				</port>
+				<port id="2" precision="I64">
+					<dim>1</dim>
+					<dim>20</dim>
+					<dim>6</dim>
+					<dim>6</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="14" name="13" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="13"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>20</dim>
+					<dim>6</dim>
+					<dim>6</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="13">
+					<dim>1</dim>
+					<dim>20</dim>
+					<dim>6</dim>
+					<dim>6</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="15" name="conv3.weight" type="Const" version="opset1">
+			<data element_type="f32" shape="50, 20, 3, 3" offset="8412" size="36000"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="conv3.weight"/>
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="conv3.weight">
+					<dim>50</dim>
+					<dim>20</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="16" name="14/WithoutBiases" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="14/WithoutBiases"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>20</dim>
+					<dim>6</dim>
+					<dim>6</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>50</dim>
+					<dim>20</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>50</dim>
+					<dim>4</dim>
+					<dim>4</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="17" name="Reshape_128" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 50, 1, 1" offset="44412" size="200"/>
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>50</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="18" name="14" type="Add" version="opset1">
+			<data auto_broadcast="numpy"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="14, Concat_127, Reshape_128"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>50</dim>
+					<dim>4</dim>
+					<dim>4</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>50</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="14">
+					<dim>1</dim>
+					<dim>50</dim>
+					<dim>4</dim>
+					<dim>4</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="19" name="conv4.weight" type="Const" version="opset1">
+			<data element_type="f32" shape="2, 50, 1, 1" offset="44612" size="400"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="conv4.weight"/>
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="conv4.weight">
+					<dim>2</dim>
+					<dim>50</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="20" name="15" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="15"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>50</dim>
+					<dim>4</dim>
+					<dim>4</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>2</dim>
+					<dim>50</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="15">
+					<dim>1</dim>
+					<dim>2</dim>
+					<dim>4</dim>
+					<dim>4</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="21" name="16" type="MaxPool" version="opset8">
+			<data strides="4, 4" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" kernel="4, 4" rounding_type="floor" auto_pad="explicit" index_element_type="i64" axis="0"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="16"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>2</dim>
+					<dim>4</dim>
+					<dim>4</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="16">
+					<dim>1</dim>
+					<dim>2</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+				<port id="2" precision="I64">
+					<dim>1</dim>
+					<dim>2</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="22" name="17" type="Exp" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="17"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>2</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="17">
+					<dim>1</dim>
+					<dim>2</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="23" name="Constant_160" type="Const" version="opset1">
+			<data element_type="i64" shape="1" offset="45012" size="8"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Constant_160"/>
+			</rt_info>
+			<output>
+				<port id="0" precision="I64">
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="24" name="18" type="ReduceSum" version="opset1">
+			<data keep_dims="true"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="18"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>2</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+				<port id="1" precision="I64">
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="18">
+					<dim>1</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="25" name="19" type="Divide" version="opset1">
+			<data auto_broadcast="numpy" m_pythondiv="true"/>
+			<rt_info>
+				<attribute name="fused_names" version="0" value="19"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>2</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="19">
+					<dim>1</dim>
+					<dim>2</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="26" name="19/sink_port_0" type="Result" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="19/sink_port_0"/>
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>2</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+		</layer>
+	</layers>
+	<edges>
+		<edge from-layer="0" from-port="0" to-layer="2" to-port="0"/>
+		<edge from-layer="1" from-port="0" to-layer="2" to-port="1"/>
+		<edge from-layer="2" from-port="2" to-layer="4" to-port="0"/>
+		<edge from-layer="3" from-port="0" to-layer="4" to-port="1"/>
+		<edge from-layer="4" from-port="2" to-layer="6" to-port="0"/>
+		<edge from-layer="5" from-port="0" to-layer="6" to-port="1"/>
+		<edge from-layer="6" from-port="2" to-layer="7" to-port="0"/>
+		<edge from-layer="7" from-port="1" to-layer="8" to-port="0"/>
+		<edge from-layer="8" from-port="1" to-layer="10" to-port="0"/>
+		<edge from-layer="9" from-port="0" to-layer="10" to-port="1"/>
+		<edge from-layer="10" from-port="2" to-layer="12" to-port="0"/>
+		<edge from-layer="11" from-port="0" to-layer="12" to-port="1"/>
+		<edge from-layer="12" from-port="2" to-layer="13" to-port="0"/>
+		<edge from-layer="13" from-port="1" to-layer="14" to-port="0"/>
+		<edge from-layer="14" from-port="1" to-layer="16" to-port="0"/>
+		<edge from-layer="15" from-port="0" to-layer="16" to-port="1"/>
+		<edge from-layer="16" from-port="2" to-layer="18" to-port="0"/>
+		<edge from-layer="17" from-port="0" to-layer="18" to-port="1"/>
+		<edge from-layer="18" from-port="2" to-layer="20" to-port="0"/>
+		<edge from-layer="19" from-port="0" to-layer="20" to-port="1"/>
+		<edge from-layer="20" from-port="2" to-layer="21" to-port="0"/>
+		<edge from-layer="21" from-port="1" to-layer="22" to-port="0"/>
+		<edge from-layer="22" from-port="1" to-layer="24" to-port="0"/>
+		<edge from-layer="22" from-port="1" to-layer="25" to-port="0"/>
+		<edge from-layer="23" from-port="0" to-layer="24" to-port="1"/>
+		<edge from-layer="24" from-port="2" to-layer="25" to-port="1"/>
+		<edge from-layer="25" from-port="2" to-layer="26" to-port="0"/>
+	</edges>
+	<meta_data>
+		<MO_version value="2022.2.0-7713-af16ea1d79a-releases/2022/2"/>
+		<Runtime_version value="2022.2.0-7713-af16ea1d79a-releases/2022/2"/>
+		<legacy_path value="False"/>
+		<cli_parameters>
+			<caffe_parser_path value="DIR"/>
+			<compress_fp16 value="False"/>
+			<data_type value="FP32"/>
+			<disable_nhwc_to_nchw value="False"/>
+			<disable_omitting_optional value="False"/>
+			<disable_resnet_optimization value="False"/>
+			<disable_weights_compression value="False"/>
+			<enable_concat_optimization value="False"/>
+			<enable_flattening_nested_params value="False"/>
+			<enable_ssd_gluoncv value="False"/>
+			<extensions value="DIR"/>
+			<framework value="onnx"/>
+			<freeze_placeholder_with_value value="{}"/>
+			<input value="input.1"/>
+			<input_model value="DIR\open-closed-eye.onnx"/>
+			<input_model_is_text value="False"/>
+			<input_shape value="[1, 3, 32, 32]"/>
+			<k value="DIR\CustomLayersMapping.xml"/>
+			<layout value="input.1(NCHW)"/>
+			<layout_values value="{'input.1': {'source_layout': 'NCHW', 'target_layout': None, 'is_input': True}}"/>
+			<legacy_mxnet_model value="False"/>
+			<log_level value="ERROR"/>
+			<mean_scale_values value="{'input.1': {'mean': array([127., 127., 127.]), 'scale': array([255., 255., 255.])}}"/>
+			<mean_values value="[127.0, 127.0, 127.0]"/>
+			<model_name value="open-closed-eye-0001"/>
+			<output value="['19']"/>
+			<output_dir value="DIR"/>
+			<placeholder_data_types value="{}"/>
+			<placeholder_shapes value="{'input.1': (1, 3, 32, 32)}"/>
+			<progress value="False"/>
+			<remove_memory value="False"/>
+			<remove_output_softmax value="False"/>
+			<reverse_input_channels value="False"/>
+			<save_params_from_nd value="False"/>
+			<scale_values value="[255, 255, 255]"/>
+			<silent value="False"/>
+			<source_layout value="()"/>
+			<static_shape value="False"/>
+			<stream_output value="False"/>
+			<target_layout value="()"/>
+			<transform value=""/>
+			<use_legacy_frontend value="False"/>
+			<use_new_frontend value="False"/>
+			<unset unset_cli_parameters="batch, counts, disable_fusing, finegrain_fusing, input_checkpoint, input_meta_graph, input_proto, input_symbol, mean_file, mean_file_offsets, nd_prefix_name, pretrained_model_name, saved_model_dir, saved_model_tags, scale, tensorboard_logdir, tensorflow_custom_layer_libraries, tensorflow_custom_operations_config_update, tensorflow_object_detection_api_pipeline_config, tensorflow_use_custom_operations_config, transformations_config"/>
+		</cli_parameters>
+	</meta_data>
+</net>

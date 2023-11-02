@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<mapping>
+	<map>
+		<framework name="input" output_port_id="input" />
+		<IR name="input" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="new_shape__87" output_port_id="new_shape__87" />
+		<IR name="new_shape__87" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_1/BiasAdd__9" output_port_id="model_1/conv2d_1/BiasAdd__9:0" />
+		<IR name="model_1/conv2d_1/BiasAdd__9" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_1/Conv2D/ReadVariableOp:0" output_port_id="model_1/conv2d_1/Conv2D/ReadVariableOp:0" />
+		<IR name="model_1/conv2d_1/Conv2D/ReadVariableOp:0" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_1/BiasAdd" output_port_id="model_1/conv2d_1/BiasAdd:0" />
+		<IR name="model_1/conv2d_1/BiasAdd" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_1/Relu" output_port_id="model_1/conv2d_1/Relu:0" />
+		<IR name="model_1/conv2d_1/Relu" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="model_1/max_pooling2d_1/MaxPool" output_port_id="model_1/max_pooling2d_1/MaxPool:0" />
+		<IR name="model_1/max_pooling2d_1/MaxPool" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_2/Conv2D/ReadVariableOp:0" output_port_id="model_1/conv2d_2/Conv2D/ReadVariableOp:0" />
+		<IR name="model_1/conv2d_2/Conv2D/ReadVariableOp:0" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_2/BiasAdd" output_port_id="model_1/conv2d_2/BiasAdd:0" />
+		<IR name="model_1/conv2d_2/BiasAdd" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_2/Relu" output_port_id="model_1/conv2d_2/Relu:0" />
+		<IR name="model_1/conv2d_2/Relu" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="model_1/max_pooling2d_2/MaxPool" output_port_id="model_1/max_pooling2d_2/MaxPool:0" />
+		<IR name="model_1/max_pooling2d_2/MaxPool" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_3/Conv2D/ReadVariableOp:0" output_port_id="model_1/conv2d_3/Conv2D/ReadVariableOp:0" />
+		<IR name="model_1/conv2d_3/Conv2D/ReadVariableOp:0" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_3/BiasAdd" output_port_id="model_1/conv2d_3/BiasAdd:0" />
+		<IR name="model_1/conv2d_3/BiasAdd" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_3/Relu" output_port_id="model_1/conv2d_3/Relu:0" />
+		<IR name="model_1/conv2d_3/Relu" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="model_1/max_pooling2d_3/MaxPool" output_port_id="model_1/max_pooling2d_3/MaxPool:0" />
+		<IR name="model_1/max_pooling2d_3/MaxPool" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_4/Conv2D/ReadVariableOp:0" output_port_id="model_1/conv2d_4/Conv2D/ReadVariableOp:0" />
+		<IR name="model_1/conv2d_4/Conv2D/ReadVariableOp:0" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_4/BiasAdd" output_port_id="model_1/conv2d_4/BiasAdd:0" />
+		<IR name="model_1/conv2d_4/BiasAdd" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_4/Relu" output_port_id="model_1/conv2d_4/Relu:0" />
+		<IR name="model_1/conv2d_4/Relu" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="model_1/max_pooling2d_4/MaxPool" output_port_id="model_1/max_pooling2d_4/MaxPool:0" />
+		<IR name="model_1/max_pooling2d_4/MaxPool" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_5/Conv2D/ReadVariableOp:0" output_port_id="model_1/conv2d_5/Conv2D/ReadVariableOp:0" />
+		<IR name="model_1/conv2d_5/Conv2D/ReadVariableOp:0" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_5/BiasAdd" output_port_id="model_1/conv2d_5/BiasAdd:0" />
+		<IR name="model_1/conv2d_5/BiasAdd" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_5/Relu" output_port_id="model_1/conv2d_5/Relu:0" />
+		<IR name="model_1/conv2d_5/Relu" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="model_1/global_average_pooling2d_1/Mean" output_port_id="model_1/global_average_pooling2d_1/Mean:0" />
+		<IR name="model_1/global_average_pooling2d_1/Mean" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="const_axes__92" output_port_id="const_axes__92" />
+		<IR name="const_axes__92" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/global_average_pooling2d_1/Mean_Squeeze__93" output_port_id="model_1/global_average_pooling2d_1/Mean_Squeeze__93:0" />
+		<IR name="model_1/global_average_pooling2d_1/Mean_Squeeze__93" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/out_tags/MatMul_Gemm__8" output_port_id="model_1/out_tags/MatMul_Gemm__8:0" />
+		<IR name="model_1/out_tags/MatMul_Gemm__8" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="out_tags" output_port_id="out_tags" />
+		<IR name="out_tags" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="Shape__32" output_port_id="Shape__32:0" />
+		<IR name="Shape__32" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="const_zero__64" output_port_id="const_zero__64" />
+		<IR name="const_zero__64" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="const_two__53" output_port_id="const_two__53" />
+		<IR name="const_two__53" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="Slice__33" output_port_id="Slice__33:0" />
+		<IR name="Slice__33" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="const_fold_opt__90" output_port_id="const_fold_opt__90" />
+		<IR name="const_fold_opt__90" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="Concat__35" output_port_id="Concat__35:0" />
+		<IR name="Concat__35" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="Resize__36" output_port_id="Resize__36:0" />
+		<IR name="Resize__36" output_port_id="3" />
+	</map>
+	<map>
+		<framework name="model_1/concatenate_1/concat" output_port_id="model_1/concatenate_1/concat:0" />
+		<IR name="model_1/concatenate_1/concat" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_6/Conv2D/ReadVariableOp:0" output_port_id="model_1/conv2d_6/Conv2D/ReadVariableOp:0" />
+		<IR name="model_1/conv2d_6/Conv2D/ReadVariableOp:0" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_6/BiasAdd" output_port_id="model_1/conv2d_6/BiasAdd:0" />
+		<IR name="model_1/conv2d_6/BiasAdd" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/activation_1/Relu" output_port_id="model_1/activation_1/Relu:0" />
+		<IR name="model_1/activation_1/Relu" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="Shape__44" output_port_id="Shape__44:0" />
+		<IR name="Shape__44" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="Slice__45" output_port_id="Slice__45:0" />
+		<IR name="Slice__45" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="const_fold_opt__89" output_port_id="const_fold_opt__89" />
+		<IR name="const_fold_opt__89" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="Concat__47" output_port_id="Concat__47:0" />
+		<IR name="Concat__47" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="Resize__48" output_port_id="Resize__48:0" />
+		<IR name="Resize__48" output_port_id="3" />
+	</map>
+	<map>
+		<framework name="model_1/concatenate_2/concat" output_port_id="model_1/concatenate_2/concat:0" />
+		<IR name="model_1/concatenate_2/concat" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_7/Conv2D/ReadVariableOp:0" output_port_id="model_1/conv2d_7/Conv2D/ReadVariableOp:0" />
+		<IR name="model_1/conv2d_7/Conv2D/ReadVariableOp:0" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_7/BiasAdd" output_port_id="model_1/conv2d_7/BiasAdd:0" />
+		<IR name="model_1/conv2d_7/BiasAdd" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/activation_1/Relu_1" output_port_id="model_1/activation_1/Relu_1:0" />
+		<IR name="model_1/activation_1/Relu_1" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="Shape__56" output_port_id="Shape__56:0" />
+		<IR name="Shape__56" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="Slice__57" output_port_id="Slice__57:0" />
+		<IR name="Slice__57" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="const_fold_opt__88" output_port_id="const_fold_opt__88" />
+		<IR name="const_fold_opt__88" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="Concat__59" output_port_id="Concat__59:0" />
+		<IR name="Concat__59" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="Resize__60" output_port_id="Resize__60:0" />
+		<IR name="Resize__60" output_port_id="3" />
+	</map>
+	<map>
+		<framework name="model_1/concatenate_3/concat" output_port_id="model_1/concatenate_3/concat:0" />
+		<IR name="model_1/concatenate_3/concat" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_8/Conv2D/ReadVariableOp:0" output_port_id="model_1/conv2d_8/Conv2D/ReadVariableOp:0" />
+		<IR name="model_1/conv2d_8/Conv2D/ReadVariableOp:0" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_8/BiasAdd" output_port_id="model_1/conv2d_8/BiasAdd:0" />
+		<IR name="model_1/conv2d_8/BiasAdd" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/activation_1/Relu_2" output_port_id="model_1/activation_1/Relu_2:0" />
+		<IR name="model_1/activation_1/Relu_2" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="Shape__68" output_port_id="Shape__68:0" />
+		<IR name="Shape__68" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="Slice__69" output_port_id="Slice__69:0" />
+		<IR name="Slice__69" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="const_fold_opt__91" output_port_id="const_fold_opt__91" />
+		<IR name="const_fold_opt__91" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="Concat__71" output_port_id="Concat__71:0" />
+		<IR name="Concat__71" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="Resize__72" output_port_id="Resize__72:0" />
+		<IR name="Resize__72" output_port_id="3" />
+	</map>
+	<map>
+		<framework name="model_1/concatenate_4/concat" output_port_id="model_1/concatenate_4/concat:0" />
+		<IR name="model_1/concatenate_4/concat" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_9/Conv2D/ReadVariableOp:0" output_port_id="model_1/conv2d_9/Conv2D/ReadVariableOp:0" />
+		<IR name="model_1/conv2d_9/Conv2D/ReadVariableOp:0" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/conv2d_9/BiasAdd" output_port_id="model_1/conv2d_9/BiasAdd:0" />
+		<IR name="model_1/conv2d_9/BiasAdd" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/activation_1/Relu_3" output_port_id="model_1/activation_1/Relu_3:0" />
+		<IR name="model_1/activation_1/Relu_3" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="model_1/out_mask/Conv2D/ReadVariableOp:0" output_port_id="model_1/out_mask/Conv2D/ReadVariableOp:0" />
+		<IR name="model_1/out_mask/Conv2D/ReadVariableOp:0" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="model_1/out_mask/BiasAdd" output_port_id="model_1/out_mask/BiasAdd:0" />
+		<IR name="model_1/out_mask/BiasAdd" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="model_1/out_mask/Sigmoid" output_port_id="model_1/out_mask/Sigmoid:0" />
+		<IR name="model_1/out_mask/Sigmoid" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="out_mask" output_port_id="out_mask" />
+		<IR name="out_mask" output_port_id="2" />
+	</map>
+</mapping>

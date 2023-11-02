@@ -40,6 +40,6 @@ def main(dir):
         print(f"Something wrong when running EyeModel: {e}")
 
 if __name__ == '__main__':
-    dir = "C:\\tmp\\GazeEstimation\\"
+    dir = "C:\\temp\\WebCamGazeEstimation\\"
     main(dir)
 

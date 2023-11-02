@@ -36,7 +36,7 @@ def main(dir):
         print(f"STransG\n{np.array2string(STransG, formatter={'float': lambda x: f'{x:.2f}'})}")
 
         """ Execute Tobii """
-        subprocess.Popen("C:\\tmp\\tobiieyetracker5\\build\\Debug\\getGaze.exe", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        subprocess.Popen("C:\\temp\\tobiieyetracker5\\build\\Debug\\getGaze.exe", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 
         homtrans.RecordGaze(model, cap)
 
@@ -44,5 +44,5 @@ def main(dir):
         print(f"Something wrong when running EyeModel: {e}")
 
 if __name__ == '__main__':
-    dir = "C:\\tmp\\GazeEstimation\\"
+    dir = "C:\\temp\\WebCamGazeEstimation\\"
     main(dir)

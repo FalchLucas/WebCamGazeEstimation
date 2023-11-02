@@ -330,7 +330,7 @@ class SFM():
         return Vector2Plane
 
 if __name__ == '__main__':
-    dir = "C:\\tmp\\GazeEstimation\\"
+    dir = "C:\\temp\\WebCamGazeEstimation\\"
     model = EyeModel(dir)
     sfm = SFM(dir)
 

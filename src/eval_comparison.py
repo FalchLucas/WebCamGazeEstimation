@@ -10,11 +10,11 @@ import os
 from datetime import datetime
 
 
-# dir = "C:\\tmp\\Trial\\Trial_13Okt23\\"
-# dir = "C:\\tmp\\Trial\\Trial_19Okt23\\HeadMovements\\Moving\\"
-# dir = "C:\\tmp\\Trial\\Trial_19Okt23\\HeadMovements\\Turning\\"
-# dir = "C:\\tmp\\Trial\\Trial_19Okt23\\TrajectoryNoHeadMovements\\"
-dir = "C:\\tmp\\Trial\\Trial_19Okt23\\TrajectoryHeadMovements\\"
+# dir = "C:\\temp\\Trial\\Trial_13Okt23\\"
+# dir = "C:\\temp\\Trial\\Trial_19Okt23\\HeadMovements\\Moving\\"
+# dir = "C:\\temp\\Trial\\Trial_19Okt23\\HeadMovements\\Turning\\"
+# dir = "C:\\temp\\Trial\\Trial_19Okt23\\TrajectoryNoHeadMovements\\"
+dir = "C:\\temp\\Trial\\Trial_19Okt23\\TrajectoryHeadMovements\\"
 plt.close('all')
 
 

@@ -29,3 +29,7 @@ Estimate gaze on computer screen
         pip install -r requirements.txt or conda install --file requirements.txt
 
 - [ ] Copy the file openh264-1.8.0-win64.dll into the environment path (e.g. C:\Anaconda3\envs\name_of_env)
+
+- [ ] run main.py to test the application
+
+- [ ] in order to run main_compareWithTobii.py you need to generate a exe file that runs Tobii Eye Tracker 5, for this you need the sdk dll for Tobii Eye Tracker 5

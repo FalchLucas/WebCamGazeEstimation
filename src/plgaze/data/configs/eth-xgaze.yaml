@@ -1,0 +1,31 @@
+mode: ETH-XGaze
+device: cpu
+model:
+  name: resnet18
+face_detector:
+  mode: mediapipe
+  dlib_model_path: ~/.plgaze/dlib/shape_predictor_68_face_landmarks.dat
+  mediapipe_max_num_faces: 3
+  mediapipe_static_image_mode: false
+gaze_estimator:
+  checkpoint: ${PACKAGE_ROOT}/plgaze/models/eth-xgaze/eth-xgaze_resnet18.pth
+  camera_params: ${PACKAGE_ROOT}/plgaze/data/calib/sample_params.yaml
+  use_dummy_camera_params: false
+  normalized_camera_params: ${PACKAGE_ROOT}/plgaze./data/normalized_camera_params/eth-xgaze.yaml
+  normalized_camera_distance: 0.6
+  image_size: [224, 224]
+demo:
+  use_camera: true
+  display_on_screen: true
+  wait_time: 1
+  image_path: null
+  video_path: null
+  output_dir: ${PACKAGE_ROOT}/../results
+  output_file_extension: avi
+  head_pose_axis_length: 0.05
+  gaze_visualization_length: 0.05
+  show_bbox: true
+  show_head_pose: false
+  show_landmarks: false
+  show_normalized_image: false
+  show_template_model: false

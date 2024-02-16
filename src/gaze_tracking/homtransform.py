@@ -92,7 +92,7 @@ class HomTransform:
 
             gaze = eye_info['gaze']
 
-            if frame_prev is not None:                
+            if frame_prev is not None and sfm:                
                 WTransG1, WTransG2, W_P = self.sfm.get_GazeToWorld(model, frame_prev, frame)        # WtG1 is a unit vector, has to be scaled   
 
             frame_prev = frame
@@ -167,7 +167,7 @@ class HomTransform:
                 print("Video stream ended")
                 break
             
-            if frame_prev is not None:
+            if frame_prev is not None and sfm:
                 WTransG1, WTransG2, W_P = self.sfm.get_GazeToWorld(model, frame_prev, frame_cam)
 
             frame_prev = frame_cam.copy()
@@ -198,7 +198,7 @@ class HomTransform:
 
         self.df.columns = ['Timestamp', 'idx', 'gaze_x', 'gaze_y', 'gaze_z', 'REyePos_x', 'REyePos_y', 'LEyePos_x', 'LEyePos_y', 'yaw', 'pitch', 'roll', 'HeadBox_xmin', 'HeadBox_ymin', 'RightEyeBox_xmin', 'RightEyeBox_ymin', 'LeftEyeBox_xmin', 'LeftEyeBox_ymin', 'ROpenClose','LOpenClose', 'set_x', 'set_y', 'set_z'] + 16*['WTransG']
         self.df = self.df.reset_index(drop=True)
-        self.df.to_csv(f"{self.dir}results\Calibration.csv")
+        self.df.to_csv(os.path.join(self.dir, "results", "Calibration.csv"))
 
         gaze, SetVal, WTransG, g = self._RemoveOutliers()
     
@@ -544,7 +544,7 @@ class HomTransform:
         ax[1].set_title(f"Gaze on screen with dimensions {self.width_mm}mmx{self.height_mm}mm")
         ax[1].grid()
 
-        plt.savefig(self.dir+"results\\"+name)
+        plt.savefig(os.path.join(self.dir, "results", name))
 
 
 if __name__ == '__main__':

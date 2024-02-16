@@ -28,8 +28,16 @@ Estimate gaze on computer screen
         pip install openvino-dev
         pip install -r requirements.txt or conda install --file requirements.txt
 
+    Additionally to OpenVino we added the demo programm from pl_gaze_estimation (https://github.com/hysts/pytorch_mpiigaze_demo), training code for the pl_gaze_estimation using MPIIGaze, MPIIFaceGaze, and ETH-XGaze are available under: https://github.com/hysts/pl_gaze_estimation/tree/main
+
+    This model however, runs beter under Ubuntu, but it was tested under Windows as well. To use the pl_gaze_estimation model run:
+
+        pip install -r requirements_pl_gaze.txt
+
 - [ ] Copy the file openh264-1.8.0-win64.dll into the environment path (e.g. C:\Anaconda3\envs\name_of_env)
 
-- [ ] run main.py to test the application
+- [ ] run main.py to test the application with the OpenVino model
+
+- [ ] run main_pl.py to test the application with the pl_gaze_estimation model (https://github.com/hysts/pytorch_mpiigaze_demo)
 
 - [ ] in order to run main_compareWithTobii.py you need to generate a exe file that runs Tobii Eye Tracker 5, for this you need the sdk dll for Tobii Eye Tracker 5

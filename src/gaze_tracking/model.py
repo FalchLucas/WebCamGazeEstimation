@@ -379,18 +379,18 @@ class EyeModel:
     '''
     Computes the gaze Vector    
     '''
-    def __init__(self, directory, subdir_face="intel\\face-detection-adas-0001\\FP32\\face-detection-adas-0001",subdir_landmark="intel\\landmarks-regression-retail-0009\\FP32\\landmarks-regression-retail-0009",\
-                                subdir_headpose="intel\\head-pose-estimation-adas-0001\\FP32\\head-pose-estimation-adas-0001", subdir_gaze="intel\\gaze-estimation-adas-0002\\FP32\\gaze-estimation-adas-0002",\
-                                subdir_open_close="intel\\open-closed-eye-0001\\FP32\\open-closed-eye-0001", subdir_pupil="intel\\PupilSegmentation\\pupils_segmentation",\
-                                subdir_landmark_35 = "intel\\facial-landmarks-35-adas-0002\\FP32\\facial-landmarks-35-adas-0002") -> None:
+    def __init__(self, directory, subdir_face=os.path.join("intel","face-detection-adas-0001","FP32","face-detection-adas-0001"),subdir_landmark=os.path.join("intel","landmarks-regression-retail-0009","FP32","landmarks-regression-retail-0009"),\
+                                subdir_headpose=os.path.join("intel","head-pose-estimation-adas-0001","FP32","head-pose-estimation-adas-0001"), subdir_gaze=os.path.join("intel","gaze-estimation-adas-0002","FP32","gaze-estimation-adas-0002"),\
+                                subdir_open_close=os.path.join("intel","open-closed-eye-0001","FP32","open-closed-eye-0001"), subdir_pupil=os.path.join("intel","PupilSegmentation","pupils_segmentation"),\
+                                subdir_landmark_35 = os.path.join("intel","facial-landmarks-35-adas-0002","FP32","facial-landmarks-35-adas-0002")) -> None:
 
-        self.face_detection = FaceDetection(directory+subdir_face)
-        self.facial_landmark_detection = FacialLandmarkDetection(directory+subdir_landmark)
-        self.head_pose_estimation = HeadPoseEstimation(directory+subdir_headpose)
-        self.gaze_estimation = GazeEstimation(directory+subdir_gaze)
-        self.open_close_eye = OpenClosedEye(directory+subdir_open_close)
-        self.pupil = Pupils(directory+subdir_pupil)
-        self.facial_landmark_35 = FacialLandmarkDetection35(directory+subdir_landmark_35)
+        self.face_detection = FaceDetection(os.path.join(directory,subdir_face))
+        self.facial_landmark_detection = FacialLandmarkDetection(os.path.join(directory,subdir_landmark))
+        self.head_pose_estimation = HeadPoseEstimation(os.path.join(directory,subdir_headpose))
+        self.gaze_estimation = GazeEstimation(os.path.join(directory,subdir_gaze))
+        self.open_close_eye = OpenClosedEye(os.path.join(directory,subdir_open_close))
+        self.pupil = Pupils(os.path.join(directory,subdir_pupil))
+        self.facial_landmark_35 = FacialLandmarkDetection35(os.path.join(directory,subdir_landmark_35))
 
         self.face_detection.load_model()
         self.facial_landmark_detection.load_model()

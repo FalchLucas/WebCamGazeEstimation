@@ -44,4 +44,5 @@ Estimate gaze on computer screen
 
 ## Credits
 If you use the code in the academic context, please cite:
+
 Lucas Falch and Katrin Solveig Lohan, "Webcam-based gaze estimation for computer screen interaction", Frontiers in Robotics and AI, Volume 11 - 2024 | https://doi.org/10.3389/frobt.2024.1369566
